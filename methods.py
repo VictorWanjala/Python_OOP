@@ -20,13 +20,22 @@ class Employee:
     @classmethod
     def set_raise_amount(cls,amount):
         cls.raise_amount = amount
+
+    
+    @staticmethod
+    def is_workday(day):
+        if day.weekday() == 5 or day.weekday() == 6:
+            return False
+        return True
       
         
     
 emp_1 = Employee('vic','wanjala',60000,'vic@gmail.com')
 emp_2 = Employee('Jon','wanjala',6000,'jon@gmail.com')
 emp_2 = Employee('Jz','Tes',40000,'res@gmail.com')
-
+import datetime
+my_date = datetime.date(2016,7,10)
+print(Employee.is_workday(my_date))
 
 Employee.set_raise_amount(1.50)
 print(Employee.raise_amount)
